@@ -1,0 +1,14 @@
+{
+  "name": "bluesky-logger",
+  "description": "An other logging framework",
+  "version": "0.0.1",
+  "author": "BlueSkyFish <blueskyfish@blueskyfish.de>",
+  "main": "logger",
+  "scripts": {
+    "test": "echo \"TODO write tests\""
+  },
+  "dependencies": {
+    "lodash": "3.10.0",
+    "strftime": "0.9.2"
+  }
+}
