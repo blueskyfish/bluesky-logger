@@ -4,9 +4,9 @@
 BlueSky Logger
 ==============
 
-Yet an other logger for NodeJS. It is simple and easy to use.
+Yet another logger for NodeJS. It is simple and easy to use.
 
-After three time implemented the same functionality, I put this into a library and use this.
+> Having implemented this library three times in different projects, here is a new additional logger library.
 
 Install
 -------
