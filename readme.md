@@ -1,4 +1,5 @@
 
+![BlueSky Logger](logo.png)
 
 BlueSky Logger
 ==============
@@ -6,6 +7,13 @@ BlueSky Logger
 Yet an other logger for NodeJS. It is simple and easy to use.
 
 After three time implemented the same functionality, I put this into a library and use this.
+
+Install
+-------
+
+```
+$ npm install --save bluesky-logger
+```
 
 Usage
 -----
@@ -19,7 +27,7 @@ logger.setLevel(logger.LEVEL_INFO);
 
 logger.debug('Hello', name, ', how are yout');
 logger.info('Important message');
-logger.warn('Critical message', system.life);
+logger.warn('Critical message', system.health);
 logger.config('Current User:', process.env['USER']);
 ```
 
