@@ -4,9 +4,19 @@
   "version": "0.0.1",
   "author": "BlueSkyFish <blueskyfish@blueskyfish.de>",
   "main": "logger",
+  "keywords": [
+    "logger",
+    "nodejs",
+    "console"
+  ],
   "scripts": {
     "test": "echo \"TODO write tests\""
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/blueskyfish/bluesky-logger.git"
+  },
+  "readme": "This is a readme: More information in the file \"readm.md\"",
   "dependencies": {
     "lodash": "3.10.0",
     "strftime": "0.9.2"
