@@ -1,6 +1,6 @@
 {
   "name": "bluesky-logger",
-  "description": "An other logging framework",
+  "description": "Yet another logger for NodeJS",
   "version": "0.0.1",
   "author": "BlueSkyFish <blueskyfish@blueskyfish.de>",
   "main": "logger",
