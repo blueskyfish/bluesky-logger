@@ -52,6 +52,7 @@ History
 -------
 
 0.0.1 first publishing
+0.1.1 add trace level
 
 License
 -------
