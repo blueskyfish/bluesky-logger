@@ -52,7 +52,7 @@ function _write(level, args) {
     time = strftime('%H:%M:%S'),
     list = [
       time,
-      '[', _.padLeft(level, ' '), ']'
+      ' [ ', _.padLeft(level, 6, ' '), ' ] '
     ];
 
     for (var index in args) {
