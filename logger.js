@@ -64,6 +64,27 @@ function _write(level, args) {
     mWriteFunc(list.join(''));
 }
 
+function _toLogLevel(s) {
+  switch (s) {
+    case 'warn':
+      return LEVEL_WARN;
+    case 'info':
+      return LEVEL_INFO;
+    case 'config':
+      return LEVEL_CONFIG;
+    case 'debug':
+      return LEVEL_DEBUG;
+    case 'trace':
+      return LEVEL_TRACE;
+    case 'all':
+      return LEVEL_ALL;
+    case 'none':
+      return LEVEL_NONE;
+    default:
+      return DEFAULT_LEVEL;
+  }
+}
+
 /**
  * Instance `logger`
  */
@@ -160,6 +181,19 @@ module.exports = {
     if (_isLevel(LEVEL_DEBUG)) {
       _write('warn', arguments);
     }
+  },
+
+  /**
+   * @name toLogLevel
+   * @description
+   * Convert a string into a log level
+   * (only this values are allow: 'all', 'warn', 'info', 'config', 'debug', 'trace', 'none')
+   *
+   * @param {string} s the log level as a string
+   * @return {number} the log level
+   */
+  toLogLevel: function (s) {
+    return _toLogLevel(s);
   },
 
   /**

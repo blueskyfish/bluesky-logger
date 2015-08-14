@@ -1,7 +1,7 @@
 {
   "name": "bluesky-logger",
   "description": "Yet another logger for NodeJS",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "BlueSkyFish <blueskyfish@blueskyfish.de>",
   "main": "logger",
   "keywords": [
