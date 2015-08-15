@@ -53,6 +53,8 @@ History
 
 * 0.0.1 first publishing
 * 0.1.1 add trace level
+* 0.2.0 add the "toLogLevel"
+* 0.2.1 fixed the readme file and change the "lodash" library to "3.10.1"
 
 License
 -------
