@@ -55,6 +55,7 @@ History
 * 0.1.1 add trace level
 * 0.2.0 add the "toLogLevel"
 * 0.2.1 fixed the readme file and change the "lodash" library to "3.10.1"
+* 0.2.2 improve the jsdoc
 
 License
 -------

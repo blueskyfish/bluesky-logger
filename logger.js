@@ -85,9 +85,6 @@ function _toLogLevel(s) {
   }
 }
 
-/**
- * Instance `logger`
- */
 module.exports = {
 
   /**
