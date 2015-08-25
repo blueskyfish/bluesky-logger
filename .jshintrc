@@ -1,6 +1,7 @@
 {
   "node": true,
   "strict": true,
+  "mocha": true,
   "predef": {
   }
 }

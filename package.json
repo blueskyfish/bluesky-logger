@@ -1,24 +1,27 @@
 {
   "name": "bluesky-logger",
   "description": "Yet another logger for NodeJS",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": "BlueSkyFish <blueskyfish@blueskyfish.de>",
-  "main": "logger",
+  "main": "factory.js",
   "keywords": [
     "logger",
     "nodejs",
     "console"
   ],
   "scripts": {
-    "test": "echo \"TODO write tests\""
+    "test": "node_modules/.bin/mocha test/**/*.spec.js"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/blueskyfish/bluesky-logger.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blueskyfish/bluesky-logger.git"
   },
   "readme": "This is a readme: More information in the file \"readm.md\"",
   "dependencies": {
     "lodash": "3.10.1",
     "strftime": "0.9.2"
+  },
+  "devDependencies": {
+    "mocha": "2.2.5"
   }
 }
