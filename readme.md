@@ -240,6 +240,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 
 ## <a name="history"></a> History
 
+* 0.4.1 add a new line sign to the file appender message.
 * 0.4.0 add a file-appender to the libray.
 * 0.3.0 Separate the configuration from the log message
 * 0.2.2 improve the jsdoc
