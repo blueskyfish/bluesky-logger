@@ -48,7 +48,8 @@ function appendMessage_(logName, message) {
   var content = [
     time,
     ' ', _.padLeft(logName, 10, ' '), ' ',
-    message
+    message,
+    '\n'
   ].join('');
 
   fs.appendFile(filename, content, 'utf8', function (err) {
