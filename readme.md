@@ -14,6 +14,7 @@ Content
 * [Configuration](#configuration)
 * [Usage](#usage)
 * [FAQ](#faq)
+* [File Appender](#fileappender)
 * [Logger](#logger)
 * [Change from 0.2.x to 0.3.x](#change)
 * [History](#history)
@@ -178,6 +179,25 @@ var logger = factory.getLogger('example'); // log level is inherited from root "
 ```
 
 
+## <a name="fileappender"></a> File Appender
+
+The file appender is for writing the log message into a file. Every day a new file is created.
+
+```js
+var loggerFactory = require('bluesky-logger');
+var fileAppender = require('bluesky-logger/file-appender');
+
+var filer = fileAppender({
+  path: 'path/to/the/logger',
+  name: 'logger-filename'
+});
+
+loggerFactory
+  .confif(...)
+  .setSeparator(...)
+  .setWriter(filer.appendMessage);
+```
+
 ## <a name="logger"></a> Logger
 
 Description of the methods from Logger class.
@@ -220,6 +240,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 
 ## <a name="history"></a> History
 
+* 0.4.0 add a file-appender to the libray.
 * 0.3.0 Separate the configuration from the log message
 * 0.2.2 improve the jsdoc
 * 0.2.1 fixed the readme file and change the "lodash" library to "3.10.1"
