@@ -9,14 +9,9 @@ var _ = require('lodash');
 var cache = require('./lib/cache');
 var writer = require('./lib/writer');
 
-/**
- * @class LoggerFactory
- */
-var factory = module.exports = {
+module.exports = {
 
   /**
-   * @name config
-   * @description
    * set the namespaces configuration.
    *
    * Config object
@@ -30,35 +25,30 @@ var factory = module.exports = {
    * **root** namespace is for all unknown namespaces.
    *
    * @param {object} namespaces the map with the namespace and its log level
-   * @return {LoggerFactory}
+   * @return {self}
    */
   config: function (namespaces) {
-
     _.forEach(namespaces, function (level, namespace) {
       cache.add(namespace, level);
     });
-    return factory;
+    return this;
   },
 
   /**
-   * @name setSeparator
-   * @description
    * set the separator for the namespaces.
    *
    * e.g. "." => namespace1.namespace2
    * e.g. "-" => namespace1-namespace2
    *
    * @param {string} sep the separator sign.
-   * @return {LoggerFactory}
+   * @return {self}
    */
   setSeparator: function (sep) {
     cache.setSeparator(sep);
-    return factory;
+    return this;
   },
 
   /**
-   * @name setWriter
-   * @description
    * set write function.
    *
    * Signature of the write function:
@@ -69,11 +59,11 @@ var factory = module.exports = {
    * ```
    *
    * @param {function|null} writeFunc
-   * @return {LoggerFactory}
+   * @return {self}
    */
   setWriter: function (writeFunc) {
     writer.setWriter(writeFunc);
-    return factory;
+    return this;
   },
 
   /**

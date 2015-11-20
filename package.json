@@ -1,7 +1,7 @@
 {
   "name": "bluesky-logger",
   "description": "Yet another logger for NodeJS",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": "BlueSkyFish <blueskyfish@blueskyfish.de>",
   "main": "factory.js",
   "license": "MIT",
@@ -18,8 +18,8 @@
     "url": "https://github.com/blueskyfish/bluesky-logger.git"
   },
   "dependencies": {
-    "lodash": "3.10.1",
-    "strftime": "0.9.2"
+    "dateformat": "1.0.12",
+    "lodash": "3.10.1"
   },
   "devDependencies": {
     "mocha": "2.2.5"
