@@ -10,7 +10,7 @@
 var assert = require('assert');
 var fs = require('fs');
 
-var strftime = require('strftime');
+var dateformat = require('dateformat');
 
 var fileAppender = require('../file-appender');
 
@@ -31,7 +31,7 @@ describe('File Appender Unit Test', function () {
     filer.appendMessage('test', 'This is a message');
 
     setTimeout(function () {
-      var filename = 'test/' + strftime('%Y-%m-%d') + '-abc-test.log';
+      var filename = 'test/' + dateformat('yyyy-mm-dd') + '-abc-test.log';
       assert.equal(true, fs.existsSync(filename), 'File "' + filename + '" should exist');
       //fs.unlinkSync(filename);
       done();

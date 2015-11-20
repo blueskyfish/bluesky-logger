@@ -11,7 +11,7 @@ var fs = require('fs');
 var path = require('path');
 
 var _ = require('lodash');
-var strftime = require('strftime');
+var dateformat = require('dateformat');
 
 var mOptions = {};
 
@@ -38,13 +38,9 @@ module.exports = function (options) {
   };
 };
 
-function _init(options) {
-  mOptions = options;
-}
-
 function appendMessage_(logName, message) {
   var filename = buildFilename_(new Date());
-  var time = strftime('%H:%M:%S');
+  var time = dateformat('HH:MM:ss');
   var content = [
     time,
     ' ', _.padLeft(logName, 10, ' '), ' ',
@@ -60,5 +56,5 @@ function appendMessage_(logName, message) {
 }
 
 function buildFilename_(date) {
-  return mOptions.template.replace(/\{date\}/g, strftime('%Y-%m-%d', date));
+  return mOptions.template.replace(/\{date\}/g, dateformat(date, 'yyyy-mm-dd'));
 }
