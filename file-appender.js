@@ -11,7 +11,7 @@ var fs = require('fs');
 var path = require('path');
 
 var _ = require('lodash');
-var dateformat = require('dateformat');
+var moment = require('moment');
 
 var mOptions = {};
 
@@ -32,6 +32,11 @@ module.exports = function (options) {
       appendMessage_(logName, message);
     },
 
+    /**
+     * Create the filename
+     * @param {moment} date the moment
+     * @return {string} the filename
+     */
     buildFilename: function (date) {
       return buildFilename_(date);
     }
@@ -39,11 +44,12 @@ module.exports = function (options) {
 };
 
 function appendMessage_(logName, message) {
-  var filename = buildFilename_(new Date());
-  var time = dateformat('HH:MM:ss');
+  var date = moment();
+  var filename = buildFilename_(date);
+  var time = date.format('hh:mm:ss');
   var content = [
     time,
-    ' ', _.padLeft(logName, 10, ' '), ' ',
+    ' ', _.padStart(logName, 10, ' '), ' ',
     message,
     '\n'
   ].join('');
@@ -56,5 +62,5 @@ function appendMessage_(logName, message) {
 }
 
 function buildFilename_(date) {
-  return mOptions.template.replace(/\{date\}/g, dateformat(date, 'yyyy-mm-dd'));
+  return mOptions.template.replace(/\{date\}/g, date.format('YYYY-MM-DD'));
 }

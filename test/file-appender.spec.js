@@ -10,7 +10,7 @@
 var assert = require('assert');
 var fs = require('fs');
 
-var dateformat = require('dateformat');
+var moment = require('moment');
 
 var fileAppender = require('../file-appender');
 
@@ -22,7 +22,7 @@ describe('File Appender Unit Test', function () {
   });
 
   it('Should build a filename', function () {
-    var date = new Date('2015-10-20');
+    var date = moment('2015-10-20');
     var filename = filer.buildFilename(date);
     assert.equal(filename, 'test/2015-10-20-abc-test.log');
   });
@@ -31,11 +31,11 @@ describe('File Appender Unit Test', function () {
     filer.appendMessage('test', 'This is a message');
 
     setTimeout(function () {
-      var filename = 'test/' + dateformat('yyyy-mm-dd') + '-abc-test.log';
+      var filename = 'test/' + moment().format('YYYY-MM-DD') + '-abc-test.log';
       assert.equal(true, fs.existsSync(filename), 'File "' + filename + '" should exist');
       //fs.unlinkSync(filename);
       done();
     }, 1000);
-  })
+  });
 
 });
