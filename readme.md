@@ -16,7 +16,7 @@ Content
 * [FAQ](#user-content-faq)
 * [File Appender](#user-content-fileappender)
 * [Logger](#user-content-logger)
-* [Change from Version](#user-content-change-from-change)
+* [Change from Version](#user-content-change-from-version)
 * [History](#user-content-history)
 * [License](#user-content-license)
 
