@@ -242,6 +242,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 
 ## History
 
+* 0.6.3 fixed the lodash call "padStart".
 * 0.6.1 update modules and refactory the file-appender
 * 0.5.0 switch the dependency module from "strftime" to "dateformat". Improve the jsDoc.
 * 0.4.1 add a new line sign to the file appender message.
