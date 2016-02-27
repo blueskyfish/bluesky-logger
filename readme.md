@@ -10,24 +10,24 @@ Yet another logger for NodeJS. It is simple and easy to use.
 
 Content
 -------
-* [Install](#install)
-* [Configuration](#configuration)
-* [Usage](#usage)
-* [FAQ](#faq)
-* [File Appender](#fileappender)
-* [Logger](#logger)
-* [Change from 0.2.x to 0.3.x](#change)
-* [History](#history)
-* [License](#license)
+* [Install](#user-content-install)
+* [Configuration](#user-content-configuration)
+* [Usage](#user-content-usage)
+* [FAQ](#user-content-faq)
+* [File Appender](#user-content-fileappender)
+* [Logger](#user-content-logger)
+* [Change from Version](#user-content-change-from-change)
+* [History](#user-content-history)
+* [License](#user-content-license)
 
-## <a name="install"></a> Install
+## Install
 
 
 ```
 $ npm install --save bluesky-logger
 ```
 
-## <a name="configuration"></a> Configuration
+## Configuration
 
 ```js
 var
@@ -72,7 +72,7 @@ Example: `debug`
 
 > The levels as string must be written in lowercase signs
 
-## <a name="usage"></a> Usage
+## Usage
 
 **Example 1:** *the log level for this logger is LEVEL_DEBUG*
 
@@ -124,7 +124,7 @@ if (logger.isDebugEnabled()) {
 }
 ```
 
-## <a name="faq"></a> FAQ
+## FAQ
 
 ### Replace the default writer function:
 
@@ -179,7 +179,7 @@ var logger = factory.getLogger('example'); // log level is inherited from root "
 ```
 
 
-## <a name="fileappender"></a> File Appender
+## File Appender
 
 The file appender is for writing the log message into a file. Every day a new file is created.
 
@@ -189,7 +189,9 @@ var fileAppender = require('bluesky-logger/file-appender');
 
 var filer = fileAppender({
   path: 'path/to/the/logger',
-  name: 'logger-filename'
+  name: 'logger-filename',
+  datePattern: 'YYYY-MM-DD',    // see node module "moment"
+  timePattern: 'hh:mm:ss'       // see node module "moment"
 });
 
 loggerFactory
@@ -198,7 +200,7 @@ loggerFactory
   .setWriter(filer.appendMessage);
 ```
 
-## <a name="logger"></a> Logger
+## Logger
 
 Description of the methods from Logger class.
 
@@ -217,7 +219,7 @@ Description of the methods from Logger class.
 | getLevel()           | -          | return the current level of the logger.
 | getName()            | -          | return the last part of the namespace.
 
-## <a name="change"></a> Change from 0.2.x to 0.3.x
+## Change from Version
 
 
 The API has change from the version 0.2 to 0.3. In order to get a logger instance must
@@ -229,7 +231,7 @@ be called the function getLogger('name').
 var logger = require('bluesky-logger');
 ```
 
-**Version 0.3.x**
+**Version 0.3.x and above**
 
 ```js
 var factory = require('bluesky-logger');
@@ -238,8 +240,9 @@ var logger = factory.getLogger('namespace');
 var logger = require('bluesky-logger').getLogger('namespace');
 ```
 
-## <a name="history"></a> History
+## History
 
+* 0.6.1 update modules and refactory the file-appender
 * 0.5.0 switch the dependency module from "strftime" to "dateformat". Improve the jsDoc.
 * 0.4.1 add a new line sign to the file appender message.
 * 0.4.0 add a file-appender to the libray.
@@ -250,7 +253,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 * 0.1.1 add trace level
 * 0.0.1 first publishing
 
-## <a name="license"></a> License
+## License
 
 ```
 The MIT License (MIT)

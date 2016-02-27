@@ -11,39 +11,54 @@ var fs = require('fs');
 var path = require('path');
 
 var _ = require('lodash');
-var dateformat = require('dateformat');
-
-var mOptions = {};
+var moment = require('moment');
 
 /**
- *
- * @param options
+ * @name FileAppenderOptions
+ * @property {string} path the path to save the log file.
+ * @property {string} name the filename without the "date" pattern.
+ * @property {string} [timePattern] the time pattern for the log message.
+ * @property {string} [datePattern] the date pattern for the filename.
+ */
+
+/**
+ * Returns a instance the the appendMessage and buildFilename method.
+
+ * @param {FileAppenderOptions} options
  * @returns {object#appendMessage(logName, message)}
  */
 module.exports = function (options) {
 
-  mOptions.path = options.path || __dirname;
-  mOptions.name = options.name || path.basename(__filename, '.js');
-  mOptions.template = path.join(mOptions.path, '{date}-' + mOptions.name + '.log');
+  options.path = options.path || process.cwd();
+  options.name = options.name || path.basename(process.cwd());
+  options.timePattern = options.timePattern || 'hh:mm:ss';
+  options.datePattern = options.datePattern || 'YYYY-MM-DD';
+  options.template = '' + path.join(options.path, '{date}-' + options.name + '.log');
 
   return {
 
     appendMessage: function (logName, message) {
-      appendMessage_(logName, message);
+      appendMessage_(options, logName, message);
     },
 
+    /**
+     * Create the filename (only for test cases)
+     * @param {moment} date the moment
+     * @return {string} the filename
+     */
     buildFilename: function (date) {
-      return buildFilename_(date);
+      return buildFilename_(options, date);
     }
   };
 };
 
-function appendMessage_(logName, message) {
-  var filename = buildFilename_(new Date());
-  var time = dateformat('HH:MM:ss');
+function appendMessage_(options, logName, message) {
+  var date = moment();
+  var filename = buildFilename_(options, date);
+  var time = date.format(options.timePattern);
   var content = [
     time,
-    ' ', _.padLeft(logName, 10, ' '), ' ',
+    ' ', _.padStart(logName, 10, ' '), ' ',
     message,
     '\n'
   ].join('');
@@ -55,6 +70,6 @@ function appendMessage_(logName, message) {
   });
 }
 
-function buildFilename_(date) {
-  return mOptions.template.replace(/\{date\}/g, dateformat(date, 'yyyy-mm-dd'));
+function buildFilename_(options, date) {
+  return options.template.replace(/\{date\}/g, date.format(options.datePattern));
 }
