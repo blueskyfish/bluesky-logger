@@ -4,7 +4,7 @@
 BlueSky Logger
 ==============
 
-Yet another logger for NodeJS. It is simple and easy to use.
+Yet another logger for Node JS. The logger is simple and easy to use.
 
 > Having implemented this library three times in different projects, here is a new additional logger library.
 
