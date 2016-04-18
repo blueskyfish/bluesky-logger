@@ -242,6 +242,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 
 ## History
 
+* 0.7.0 unit test for cache, pump lodash to 4.11.1, rewrite the cache module
 * 0.6.3 fixed the lodash call "padStart".
 * 0.6.1 update modules and refactory the file-appender
 * 0.5.0 switch the dependency module from "strftime" to "dateformat". Improve the jsDoc.
@@ -259,7 +260,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 ```
 The MIT License (MIT)
 
-Copyright (c) 2015 BlueSkyFish
+Copyright (c) 2016 BlueSkyFish
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
