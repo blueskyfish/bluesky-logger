@@ -4,7 +4,7 @@
 BlueSky Logger
 ==============
 
-Yet another logger for NodeJS. It is simple and easy to use.
+Yet another logger for Node JS. The logger is simple and easy to use.
 
 > Having implemented this library three times in different projects, here is a new additional logger library.
 
@@ -242,6 +242,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 
 ## History
 
+* 0.7.1 Update the dependencies node module. Add a typings definition file `index.d.ts` (BETA).
 * 0.7.0 unit test for cache, pump lodash to 4.11.1, rewrite the cache module
 * 0.6.3 fixed the lodash call "padStart".
 * 0.6.1 update modules and refactory the file-appender
@@ -260,7 +261,7 @@ var logger = require('bluesky-logger').getLogger('namespace');
 ```
 The MIT License (MIT)
 
-Copyright (c) 2016 BlueSkyFish
+Copyright (c) 2017 BlueSkyFish
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

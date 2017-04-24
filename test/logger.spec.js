@@ -2,7 +2,7 @@
  * bluesky-logger - https://github.com/blueskyfish/bluesky-logger.git
  *
  * The MIT License (MIT)
- * Copyright (c) 2016 BlueSkyFish
+ * Copyright (c) 2017 BlueSkyFish
  */
 
 'use strict';

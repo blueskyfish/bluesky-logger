@@ -2,7 +2,7 @@
  * bluesky-logger - https://github.com/blueskyfish/bluesky-logger.git
  *
  * The MIT License (MIT)
- * Copyright (c) 2016 BlueSkyFish
+ * Copyright (c) 2017 BlueSkyFish
  */
 
 'use strict';
@@ -33,7 +33,7 @@ module.exports = function (options) {
   options.name = options.name || path.basename(process.cwd());
   options.timePattern = options.timePattern || 'hh:mm:ss';
   options.datePattern = options.datePattern || 'YYYY-MM-DD';
-  options.template = '' + path.join(options.path, '{date}-' + options.name + '.log');
+  options.template = path.join(options.path, '{date}-' + options.name + '.log');
 
   return {
 
